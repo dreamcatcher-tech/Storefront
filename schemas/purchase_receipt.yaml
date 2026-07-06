@@ -1,0 +1,36 @@
+# Draft Storefront purchase / renewal / cancellation receipt schema.
+storefront_receipt:
+  receipt_id: receipt:<stable-id>
+  receipt_type: <quote | purchase | fulfillment | renewal_audit | cancellation | refund | challenge>
+  card_id: store:<stable-slug>
+  card_version: <version-or-digest>
+  principal_ref: <redacted-or-local-ref>
+  agent_ref: <agent-id-or-attested-ref>
+  provider_ref: <provider-id>
+  price:
+    model: <free | per_job | subscription | commission | referral | revenue_share | equity | hybrid>
+    amount_or_rule: <redacted-or-public-rule>
+    currency: <currency-or-token>
+  reason_selected: <agent-readable rationale>
+  alternatives_considered: []
+  evidence_used: []
+  authority:
+    agent_authority_ref: <policy-or-lease-ref>
+    principal_approval_ref: <if any>
+    conscience_gate_refs: []
+  expected_value: <estimate-and-method>
+  actual_value: <filled after fulfillment or renewal>
+  fulfillment:
+    status: <pending | in_progress | complete | failed | cancelled>
+    artifacts: []
+    verification_refs: []
+  provenance:
+    attribution_policy_ref: <policy>
+    contributor_graph_ref: <graph-or-receipt>
+  followup:
+    renewal_test_date: <date-or-event>
+    cancel_or_switch_conditions: []
+  labels:
+    dreamcatcher_operated: <true | false>
+    sponsored: <true | false>
+    referral_paid: <true | false>

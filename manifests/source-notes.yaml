@@ -1,0 +1,21 @@
+source_notes:
+  - title: Agent Storefront Cards as Real-World Capability Offers
+    vault_path: /opt/data/notes/Theses/Agent Storefront Cards as Real-World Capability Offers.md
+    notes_commit: e328f6a
+  - title: Verified Burn Receipts for Fair Software Pricing
+    vault_path: /opt/data/notes/Theses/Verified Burn Receipts for Fair Software Pricing.md
+    notes_commit: fefacf7
+  - title: Dreamcatcher Opportunity Directory and Network Roles
+    vault_path: /opt/data/notes/Theses/Dreamcatcher Opportunity Directory and Network Roles.md
+  - title: Business Model Shape Language for Opportunity Mapping
+    vault_path: /opt/data/notes/Theses/Business Model Shape Language for Opportunity Mapping.md
+  - title: Agentic Optimization Replaces Search Engine Optimization
+    vault_path: /opt/data/notes/Theses/Agentic Optimization Replaces Search Engine Optimization.md
+  - title: Principal-Fed Agents Invert the Purchasing Decision
+    vault_path: /opt/data/notes/Theses/Principal-Fed Agents Invert the Purchasing Decision.md
+  - title: Dreamcatcher Business Model - Owned Agents and Live Solution Network
+    vault_path: /opt/data/notes/Theses/Dreamcatcher Business Model - Owned Agents and Live Solution Network.md
+repo_policy:
+  feature_files_flat: true
+  implementation_status: spec_seed
+  remote_preference: dreamcatcher-tech/Storefront

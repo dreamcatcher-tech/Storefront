@@ -1,0 +1,77 @@
+# Draft Storefront card schema.
+# This is a human/agent-readable contract sketch, not yet a machine-enforced JSON Schema.
+agent_storefront_card:
+  card_id: store:<stable-slug>
+  version: <version-or-digest>
+  title: <short offer name>
+  summary: <plain-language promise>
+  labels:
+    ownership: <dreamcatcher_operated | third_party | partner | community>
+    sponsorship: <none | sponsored | referral_paid>
+    maturity: <idea | pilot | measured | proven_for_segment | deprecated | insufficient_evidence>
+    certification: <certified | uncertified | auditor_sealed | agent_tested>
+  outcome_claim:
+    principal_outcome: <what changes in the world for the principal>
+    success_definition: <observable done criteria>
+    verification_artifacts: []
+  good_for:
+    principal_segments: []
+    agent_states: []
+    jobs_to_be_done: []
+  not_good_for: []
+  capability_path:
+    fulfillment_modes:
+      - software_tool
+      - agent_skill
+      - human_service
+      - agency_support
+      - certification
+      - external_vendor
+      - physical_world_action
+      - legal_or_financial_rail
+    providers: []
+    dependencies: []
+  agent_procedure:
+    preflight: []
+    invocation: []
+    verification: []
+  authority:
+    agent_can_do_alone: []
+    requires_principal_approval: []
+    conscience_gates: []
+    spending_limits: []
+  economics:
+    price_model: <free | per_job | subscription | commission | referral | revenue_share | equity | hybrid>
+    expected_value_basis: []
+    break_even_condition: <when it is worth it>
+    renewal_test: <how the agent re-audits later>
+  evidence:
+    claims: []
+    evidence_refs: []
+    burn_receipt_refs: []
+    known_failure_modes: []
+    rejection_reasons_seen: []
+  alternatives:
+    unmanaged: []
+    diy_or_open_source: []
+    external_providers: []
+    cheaper_paths: []
+    when_to_choose_alternative: []
+  risk_flags:
+    legal: []
+    privacy: []
+    safety: []
+    reliability: []
+    externalities: []
+  provenance:
+    contributors: []
+    attribution_policy_ref: <policy>
+    no_erasure_required: true
+  links:
+    human_page: <url>
+    agent_endpoint: <url-or-function-ref>
+    quote: <url-or-function-ref>
+    purchase: <url-or-function-ref>
+    fulfillment_status: <url-or-function-ref>
+    receipts: <url-or-function-ref>
+    cancel_or_renew: <url-or-function-ref>

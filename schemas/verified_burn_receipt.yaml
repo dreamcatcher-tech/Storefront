@@ -1,0 +1,75 @@
+# Draft verified burn receipt schema.
+verified_burn_receipt:
+  module_id: module:<stable-id>
+  module_version: <version-or-digest>
+  source_visibility: <open | escrowed | confidential | clean_room_only>
+  artifact_digests:
+    package: sha256:<digest>
+    sbom: sha256:<digest>
+    test_bundle: sha256:<digest>
+  burn_windows:
+    lifetime:
+      model_runs: <count>
+      input_tokens: <count-or-range>
+      output_tokens: <count-or-range>
+      model_cost: <currency-or-range>
+      tool_cost: <currency-or-range>
+      human_review_hours: <range>
+      test_runs: <count>
+    last_30_days:
+      model_runs: <count>
+      input_tokens: <count-or-range>
+      output_tokens: <count-or-range>
+      model_cost: <currency-or-range>
+      tool_cost: <currency-or-range>
+      human_review_hours: <range>
+      test_runs: <count>
+      incident_or_update_refs: []
+    last_7_days:
+      model_runs: <count>
+      input_tokens: <count-or-range>
+      output_tokens: <count-or-range>
+      model_cost: <currency-or-range>
+      tool_cost: <currency-or-range>
+      human_review_hours: <range>
+      test_runs: <count>
+      incident_or_update_refs: []
+  model_breakdown:
+    - model: <provider/model-or-attested-class>
+      role: <generation | review | test_generation | debugging | security_review | summarization>
+      run_count: <count>
+      token_counts:
+        input: <count-or-range>
+        output: <count-or-range>
+      cost_basis_ref: <pricing-table-or-auditor-ref>
+      run_digest_refs: []
+  clean_room:
+    inspection_available: <true | false>
+    work_available: <true | false>
+    environment_attestation_ref: <TEE/CVM/session-policy-digest>
+    source_retention_policy: <no_copy | no_raw_source_output | derived_patch_only>
+    allowed_outputs:
+      - behavior_report
+      - vulnerability_report
+      - patch_packet
+      - test_case
+      - pricing_challenge
+    non_leakage_receipts: []
+  recreate_cost_estimate:
+    estimated_model_burn: <range>
+    estimated_delay: <range>
+    validation_burden: <tests/benchmarks/reviews>
+    maintenance_risk: <summary>
+    confidence: <low | medium | high>
+    method: <how estimate is derived from receipts>
+  fair_price_anchor:
+    current_offer_price: <amount-or-rule>
+    amortization_basis: <users/time/window>
+    improvement_fund_share: <percentage-or-rule>
+    attribution_share: <percentage-or-rule>
+    buyer_agent_decision_hint: <pay | negotiate | inspect | recreate | reject>
+  verification:
+    signed_by: []
+    challenge_window: <duration>
+    auditor_refs: []
+    caveats: []
