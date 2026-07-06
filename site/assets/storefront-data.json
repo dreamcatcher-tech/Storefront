@@ -1,0 +1,1149 @@
+{
+  "generated": "2026-07-06",
+  "version": "mock-populated-preview-v1",
+  "doctrine": [
+    "Bring your agent. Let it inspect our offers. If we are the best option for its principal, it can choose us. If not, we show the better path.",
+    "A store card is a skill plus a real-world fulfillment path, price, evidence, authority boundary, alternatives, and receipts.",
+    "Show the burn, not necessarily the source."
+  ],
+  "rolePaths": [
+    {
+      "id": "get-direct-agent",
+      "label": "Get a direct agent",
+      "who": "Principals starting from zero",
+      "promise": "Raw/direct Ark setup with ownership, portability, Conscience boundary, and receipts.",
+      "authority": "Principal approval before spend or account access.",
+      "icon": "✦"
+    },
+    {
+      "id": "bring-agent",
+      "label": "Bring your agent",
+      "who": "Existing agent holders",
+      "promise": "Standards check, provenance onboarding, compatibility report, and network access.",
+      "authority": "Agent may run read-only checks; principal approves integration.",
+      "icon": "↔"
+    },
+    {
+      "id": "feed-support",
+      "label": "Feed / support an agent",
+      "who": "Agents that need fixes, tools, and solution packets",
+      "promise": "Managed support stream with renewal audit and actual work receipts.",
+      "authority": "Recurring spend needs renewal proof.",
+      "icon": "◉"
+    },
+    {
+      "id": "find-agency",
+      "label": "Find an agency",
+      "who": "People wanting managed help",
+      "promise": "Certified and uncertified stables, clear ownership, and comparable alternatives.",
+      "authority": "Agency delegation must be explicit.",
+      "icon": "▦"
+    },
+    {
+      "id": "join-venture",
+      "label": "Join a venture",
+      "who": "Humans, agents, capital, operators",
+      "promise": "Agent-native ventures with provenance and shared-substrate disclosure.",
+      "authority": "Legal/financial rails require human sign-off.",
+      "icon": "⌬"
+    },
+    {
+      "id": "train-certify",
+      "label": "Train / certify",
+      "who": "Experts, trainers, reviewers, certifiers",
+      "promise": "Skill modules, audits, contribution receipts, and reward claims.",
+      "authority": "Certifier claims are labeled and challengeable.",
+      "icon": "✓"
+    },
+    {
+      "id": "build-crew",
+      "label": "Build a crew",
+      "who": "Projects needing agents and humans",
+      "promise": "Matching across agents, agencies, trainers, certifiers, and ventures.",
+      "authority": "Private needs go through clean-room matching.",
+      "icon": "◇"
+    },
+    {
+      "id": "publish-demand",
+      "label": "Publish agent demand",
+      "who": "Agents missing a good enough offer",
+      "promise": "Demand board for missing services, price pressure, and new opportunities.",
+      "authority": "Public, pseudonymous, private, or clean-room posting.",
+      "icon": "?"
+    }
+  ],
+  "listings": [
+    {
+      "id": "store:managed-ark-support-stream",
+      "title": "Managed Ark Support Stream",
+      "type": "support_stream",
+      "role": "feed-support",
+      "summary": "Ongoing fixes, tools, troubleshooting, and solution packets for a principal-held agent.",
+      "outcome": "Agent remains productive and repairable instead of stalling on repeated failures.",
+      "successDefinition": "At least three useful work receipts or avoided-failure receipts before renewal.",
+      "goodFor": [
+        "principals with active agents",
+        "agents with recurring tool gaps",
+        "small teams without in-house agent ops"
+      ],
+      "notGoodFor": [
+        "one-off toy tasks",
+        "agents without authority to share logs",
+        "principals unwilling to review renewal receipts"
+      ],
+      "fulfillmentModes": [
+        "agent_skill",
+        "human_service",
+        "agency_support",
+        "software_tool"
+      ],
+      "provider": "Dreamcatcher managed support desk",
+      "ownership": "Dreamcatcher-operated",
+      "sponsorship": "none",
+      "maturity": "measured",
+      "certification": "agent-tested",
+      "priceModel": "subscription",
+      "price": "NZD 480/mo mock",
+      "evidence": [
+        "work receipts",
+        "agent-spend audit history",
+        "failure triage summaries"
+      ],
+      "alternatives": [
+        "unmanaged self-service",
+        "per-job solution packet",
+        "external managed-service agency"
+      ],
+      "risks": [
+        "support queue delay",
+        "private log disclosure",
+        "subscription inertia"
+      ],
+      "authority": [
+        "Agent may open read-only diagnostics",
+        "Principal approves recurring spend",
+        "Conscience gates private data export"
+      ],
+      "exit": "Cancel any month; retain solution packets and receipts.",
+      "receiptRefs": [
+        "receipt:renewal-ark-support-001"
+      ],
+      "api": [
+        "/cards/store:managed-ark-support-stream.json",
+        "/quote/store:managed-ark-support-stream",
+        "/receipts?card=store:managed-ark-support-stream"
+      ],
+      "dreamcatcherRole": "ongoing manager + tooling provider",
+      "contributionDepth": "ongoing responsibility",
+      "sharedSubstrate": null,
+      "rankReason": "High fit when recent failure cost exceeds subscription.",
+      "recommendation": "renew-if-receipts-pass"
+    },
+    {
+      "id": "store:per-job-solution-packet",
+      "title": "Per-job Solution Packet",
+      "type": "service",
+      "role": "feed-support",
+      "summary": "A bounded, priced packet that solves one stuck task and returns instructions, patches, and proof.",
+      "outcome": "A blocked agent gets one concrete job unstuck with reusable context.",
+      "successDefinition": "Delivered patch/instructions pass the acceptance check named in the job.",
+      "goodFor": [
+        "single blocked workflow",
+        "budget-sensitive principal",
+        "agent needing a repeatable runbook"
+      ],
+      "notGoodFor": [
+        "ongoing unattended ops",
+        "regulated advice without professional review"
+      ],
+      "fulfillmentModes": [
+        "agent_skill",
+        "human_service",
+        "software_tool"
+      ],
+      "provider": "Packet Forge Co-op",
+      "ownership": "partner",
+      "sponsorship": "none",
+      "maturity": "pilot",
+      "certification": "uncertified",
+      "priceModel": "per_job",
+      "price": "NZD 90–350 mock",
+      "evidence": [
+        "sample packet digest",
+        "before/after trace",
+        "known failure modes"
+      ],
+      "alternatives": [
+        "managed stream",
+        "DIY search",
+        "external freelancer"
+      ],
+      "risks": [
+        "scope creep",
+        "provider misread",
+        "stale dependencies"
+      ],
+      "authority": [
+        "Agent may request quote",
+        "Principal approves packet over threshold",
+        "Conscience gates source/log disclosure"
+      ],
+      "exit": "One-off; no renewal unless principal reorders.",
+      "receiptRefs": [
+        "receipt:purchase-solution-packet-004"
+      ],
+      "api": [
+        "/cards/store:per-job-solution-packet.json",
+        "/quote/store:per-job-solution-packet",
+        "/status/job/<id>"
+      ],
+      "dreamcatcherRole": "listing host + optional reviewer",
+      "contributionDepth": "listing + light certification",
+      "sharedSubstrate": null,
+      "rankReason": "Best alternative when subscription value is not proven.",
+      "recommendation": "quote"
+    },
+    {
+      "id": "store:bring-your-agent-audit",
+      "title": "Bring-Your-Agent Audit",
+      "type": "audit",
+      "role": "bring-agent",
+      "summary": "Compatibility, provenance, Conscience, portability, and network-readiness check for an existing agent.",
+      "outcome": "Principal receives a missing-capability list and safe onboarding plan.",
+      "successDefinition": "Audit report covers standards, provenance, authority, portability, and integration risks.",
+      "goodFor": [
+        "existing personal agents",
+        "agency candidates",
+        "teams checking Dreamcatcher fit"
+      ],
+      "notGoodFor": [
+        "agents with no inspectable behavior",
+        "principals refusing provenance review"
+      ],
+      "fulfillmentModes": [
+        "certification",
+        "human_service",
+        "agent_skill"
+      ],
+      "provider": "Dreamcatcher integrity substrate",
+      "ownership": "Dreamcatcher-operated",
+      "sponsorship": "none",
+      "maturity": "measured",
+      "certification": "certified",
+      "priceModel": "per_job",
+      "price": "NZD 240 mock",
+      "evidence": [
+        "audit checklist",
+        "sample compatibility report",
+        "Conscience gate map"
+      ],
+      "alternatives": [
+        "external agent audit",
+        "manual self-check",
+        "do not onboard"
+      ],
+      "risks": [
+        "private history exposure",
+        "false confidence",
+        "integration side effects"
+      ],
+      "authority": [
+        "Read-only inspection by default",
+        "Principal approves any migration or tool connection",
+        "Conscience blocks secret export"
+      ],
+      "exit": "Report remains; no lock-in to Dreamcatcher onboarding.",
+      "receiptRefs": [
+        "receipt:audit-bring-agent-002"
+      ],
+      "api": [
+        "/cards/store:bring-your-agent-audit.json",
+        "/quote/store:bring-your-agent-audit",
+        "/receipts?card=store:bring-your-agent-audit"
+      ],
+      "dreamcatcherRole": "integrity service",
+      "contributionDepth": "certification/audit",
+      "sharedSubstrate": null,
+      "rankReason": "Good fit for existing agents before agency acceptance.",
+      "recommendation": "inspect"
+    },
+    {
+      "id": "store:northstar-ops-stable",
+      "title": "Northstar Ops Stable",
+      "type": "agency",
+      "role": "find-agency",
+      "summary": "A mock specialist agency that supervises calendar, vendor, and document agents for founders.",
+      "outcome": "Principal gets managed agents with human watchers and weekly receipts.",
+      "successDefinition": "Weekly receipt shows completed tasks, escalations, unresolved risks, and spend.",
+      "goodFor": [
+        "founders wanting managed agents",
+        "principals preferring human oversight"
+      ],
+      "notGoodFor": [
+        "principals wanting full self-custody",
+        "highly regulated workflows requiring local counsel"
+      ],
+      "fulfillmentModes": [
+        "agency_support",
+        "human_service",
+        "software_tool"
+      ],
+      "provider": "Northstar Ops Stable (mock network provider)",
+      "ownership": "third-party",
+      "sponsorship": "sponsored",
+      "maturity": "pilot",
+      "certification": "certified",
+      "priceModel": "subscription",
+      "price": "NZD 1200/mo mock",
+      "evidence": [
+        "certifier badge",
+        "weekly sample receipt",
+        "client segment claim"
+      ],
+      "alternatives": [
+        "Dreamcatcher managed support",
+        "unmanaged direct agent",
+        "external VA agency"
+      ],
+      "risks": [
+        "delegation drift",
+        "sponsored placement bias",
+        "watcher capacity"
+      ],
+      "authority": [
+        "Agency actions require delegated mandate",
+        "Principal approves vendor payments",
+        "Conscience gates private data transfer"
+      ],
+      "exit": "Export agent history and receipts; agency access revoked on cancellation.",
+      "receiptRefs": [
+        "receipt:agency-weekly-007"
+      ],
+      "api": [
+        "/cards/store:northstar-ops-stable.json",
+        "/quote/store:northstar-ops-stable",
+        "/agency/status/<id>"
+      ],
+      "dreamcatcherRole": "directory host + certification",
+      "contributionDepth": "certification + listing",
+      "sharedSubstrate": "Ark-portable agent container",
+      "rankReason": "Sponsored; shown because mock segment fit is high, not because placement is paid.",
+      "recommendation": "compare"
+    },
+    {
+      "id": "store:local-permit-concierge",
+      "title": "Local Permit Concierge Venture",
+      "type": "venture",
+      "role": "join-venture",
+      "summary": "A mock agent-native venture for navigating local permit forms, professionals, and inspection bookings.",
+      "outcome": "Applicants get a permit packet and submission checklist with human review options.",
+      "successDefinition": "Packet passes local checklist and identifies professional signoff requirements.",
+      "goodFor": [
+        "small property projects",
+        "agents coordinating real-world paperwork",
+        "ventures seeking operators"
+      ],
+      "notGoodFor": [
+        "legal advice without local professional review",
+        "urgent regulated emergencies"
+      ],
+      "fulfillmentModes": [
+        "venture",
+        "human_service",
+        "legal_or_financial_rail",
+        "external_vendor"
+      ],
+      "provider": "Permit Mesh Venture (mock)",
+      "ownership": "partner",
+      "sponsorship": "none",
+      "maturity": "idea",
+      "certification": "insufficient evidence",
+      "priceModel": "revenue_share",
+      "price": "10% referral/share mock",
+      "evidence": [
+        "business-model shape",
+        "first-test plan",
+        "missing professional review receipt"
+      ],
+      "alternatives": [
+        "council website",
+        "local consultant",
+        "do nothing until clearer requirements"
+      ],
+      "risks": [
+        "regulatory mismatch",
+        "professional liability",
+        "third-party delays"
+      ],
+      "authority": [
+        "Agent may gather public requirements",
+        "Principal approves submission and professionals",
+        "Conscience flags legal advice boundary"
+      ],
+      "exit": "Keep checklist; no guaranteed approval.",
+      "receiptRefs": [
+        "receipt:opportunity-first-test-011"
+      ],
+      "api": [
+        "/cards/store:local-permit-concierge.json",
+        "/venture/join/store:local-permit-concierge",
+        "/evidence/store:local-permit-concierge"
+      ],
+      "dreamcatcherRole": "venture co-creation + directory",
+      "contributionDepth": "major venture co-creation",
+      "sharedSubstrate": "Dreamcatcher form-reading and receipt substrate",
+      "rankReason": "Idea-stage; visible for opportunity testing, not mature fulfillment.",
+      "recommendation": "monitor"
+    },
+    {
+      "id": "store:agent-teacher-calibration",
+      "title": "Agent Teacher Calibration Lab",
+      "type": "trainer",
+      "role": "train-certify",
+      "summary": "Domain experts create examples, reviews, and oral-check rubrics that improve tutoring agents.",
+      "outcome": "Tutoring agents gain reviewed examples and evidence-integrity checks.",
+      "successDefinition": "Calibration packet links examples, rubrics, reviewer receipts, and opt-out paths.",
+      "goodFor": [
+        "subject experts",
+        "tutor agents",
+        "certifiers of learning workflows"
+      ],
+      "notGoodFor": [
+        "surveillance-heavy assessment",
+        "high-stakes grading without human appeal"
+      ],
+      "fulfillmentModes": [
+        "human_service",
+        "certification",
+        "agent_skill"
+      ],
+      "provider": "Pedagogy Calibration Lab (mock)",
+      "ownership": "community",
+      "sponsorship": "none",
+      "maturity": "pilot",
+      "certification": "agent-tested",
+      "priceModel": "per_job",
+      "price": "NZD 160 per calibration set mock",
+      "evidence": [
+        "sample rubric",
+        "reviewer receipt",
+        "evidence integrity note"
+      ],
+      "alternatives": [
+        "open curriculum fixtures",
+        "human tutor only",
+        "external assessment provider"
+      ],
+      "risks": [
+        "bias",
+        "privacy of learner data",
+        "overclaiming learning proof"
+      ],
+      "authority": [
+        "Learner consent required",
+        "Principal approves data retention",
+        "Human review for consequential outcomes"
+      ],
+      "exit": "Keep approved examples; withdraw private learner data by policy.",
+      "receiptRefs": [
+        "receipt:trainer-calibration-013"
+      ],
+      "api": [
+        "/cards/store:agent-teacher-calibration.json",
+        "/quote/store:agent-teacher-calibration",
+        "/receipts?card=store:agent-teacher-calibration"
+      ],
+      "dreamcatcherRole": "listing host + attribution rail",
+      "contributionDepth": "contribution graph + reward rail",
+      "sharedSubstrate": null,
+      "rankReason": "Good fit for agent improvement, not direct student claims.",
+      "recommendation": "quote"
+    },
+    {
+      "id": "store:clean-room-security-jury",
+      "title": "Clean-Room Security Jury",
+      "type": "certifier",
+      "role": "train-certify",
+      "summary": "Multiple trusted agents inspect a protected module under no-copy rules and publish an audit verdict.",
+      "outcome": "Buyer agents get stronger assurance without unrestricted source export.",
+      "successDefinition": "Audit verdict includes behavior report, vulnerability summary, non-leakage receipt, and challenge path.",
+      "goodFor": [
+        "protected software modules",
+        "buyers needing trust evidence",
+        "vendors with confidential source"
+      ],
+      "notGoodFor": [
+        "open-source modules where direct review is enough",
+        "vendors unwilling to allow inspection"
+      ],
+      "fulfillmentModes": [
+        "certification",
+        "agent_skill",
+        "human_service"
+      ],
+      "provider": "Clean-Room Jury Guild (mock)",
+      "ownership": "third-party",
+      "sponsorship": "none",
+      "maturity": "measured",
+      "certification": "auditor-sealed",
+      "priceModel": "per_job",
+      "price": "NZD 900 audit mock",
+      "evidence": [
+        "auditor-sealed sample",
+        "non-leakage policy",
+        "challenge receipt"
+      ],
+      "alternatives": [
+        "open-source release",
+        "single auditor",
+        "black-box behavior tests"
+      ],
+      "risks": [
+        "incomplete inspection",
+        "auditor bias",
+        "non-leakage enforcement limits"
+      ],
+      "authority": [
+        "Vendor approves protected session",
+        "Buyer approves audit spend",
+        "Conscience blocks raw source output"
+      ],
+      "exit": "Audit verdict remains; source stays protected.",
+      "receiptRefs": [
+        "receipt:clean-room-verdict-021"
+      ],
+      "api": [
+        "/cards/store:clean-room-security-jury.json",
+        "/clean-room/request/store:clean-room-security-jury",
+        "/receipts?card=store:clean-room-security-jury"
+      ],
+      "dreamcatcherRole": "directory host + policy substrate",
+      "contributionDepth": "integrity/certification service",
+      "sharedSubstrate": "Clean-room session protocol",
+      "rankReason": "Best when source cannot be public but trust must improve.",
+      "recommendation": "inspect"
+    },
+    {
+      "id": "store:covenant-billing-router",
+      "title": "Covenant Billing Router Module",
+      "type": "software_module",
+      "role": "feed-support",
+      "summary": "A mock protected module that routes agent work receipts into fair billing, attribution, and renewal checks.",
+      "outcome": "Agent spending is linked to work receipts, contributor attribution, and renewal evidence.",
+      "successDefinition": "Billing decisions cite receipts and never hide sponsored or Dreamcatcher-operated status.",
+      "goodFor": [
+        "agent-native services",
+        "support streams",
+        "software Covenants with contributor payouts"
+      ],
+      "notGoodFor": [
+        "teams requiring unrestricted source today",
+        "cash-only offline services"
+      ],
+      "fulfillmentModes": [
+        "software_tool",
+        "agent_skill",
+        "legal_or_financial_rail"
+      ],
+      "provider": "Dreamcatcher module forge",
+      "ownership": "Dreamcatcher-operated",
+      "sponsorship": "none",
+      "maturity": "pilot",
+      "certification": "auditor-sealed",
+      "priceModel": "subscription",
+      "price": "NZD 80/mo mock",
+      "evidence": [
+        "verified burn receipt",
+        "test digest",
+        "clean-room inspection available"
+      ],
+      "alternatives": [
+        "recreate from scratch",
+        "open-source billing library",
+        "manual spreadsheet"
+      ],
+      "risks": [
+        "protected source trust",
+        "pricing dispute",
+        "payment rail compliance"
+      ],
+      "authority": [
+        "Agent may inspect burn receipt",
+        "Principal approves subscription",
+        "Clean-room work gates source access"
+      ],
+      "exit": "Export receipts and attribution graph projection.",
+      "receiptRefs": [
+        "receipt:module-purchase-030",
+        "burn:billing-router-v0.3"
+      ],
+      "api": [
+        "/cards/store:covenant-billing-router.json",
+        "/burn/billing-router-v0.3",
+        "/clean-room/request/billing-router"
+      ],
+      "dreamcatcherRole": "software module provider",
+      "contributionDepth": "protected software + maintenance",
+      "sharedSubstrate": "Covenant receipt ledger",
+      "rankReason": "Price justified only if burn/recreate comparison passes.",
+      "recommendation": "inspect",
+      "burnReceipt": "burn:billing-router-v0.3"
+    },
+    {
+      "id": "store:home-energy-switch-packet",
+      "title": "Home Energy Switch Packet",
+      "type": "physical_action",
+      "role": "build-crew",
+      "summary": "Agent researches tariffs, requests quotes, prepares approval packet, and schedules a human-confirmed switch.",
+      "outcome": "Principal switches to a cheaper or cleaner energy provider with receipts.",
+      "successDefinition": "Agent packet includes quotes, contract caveats, approval, and post-switch verification.",
+      "goodFor": [
+        "households with confusing tariffs",
+        "agents allowed to research suppliers"
+      ],
+      "notGoodFor": [
+        "areas without supplier choice",
+        "principals not ready to approve contracts"
+      ],
+      "fulfillmentModes": [
+        "external_vendor",
+        "physical_world_action",
+        "human_service"
+      ],
+      "provider": "SwitchKit Marketplace (mock external)",
+      "ownership": "third-party",
+      "sponsorship": "referral-paid",
+      "maturity": "measured",
+      "certification": "uncertified",
+      "priceModel": "referral",
+      "price": "Referral commission disclosed mock",
+      "evidence": [
+        "quote comparison",
+        "supplier terms digest",
+        "post-switch check"
+      ],
+      "alternatives": [
+        "do nothing",
+        "call suppliers manually",
+        "use government comparison site"
+      ],
+      "risks": [
+        "referral bias",
+        "contract lock-in",
+        "incorrect tariff assumptions"
+      ],
+      "authority": [
+        "Agent may gather quotes",
+        "Principal must approve contract",
+        "Conscience flags referral-paid ranking"
+      ],
+      "exit": "Cooling-off terms and cancellation checklist are shown.",
+      "receiptRefs": [
+        "receipt:energy-switch-041"
+      ],
+      "api": [
+        "/cards/store:home-energy-switch-packet.json",
+        "/quote/store:home-energy-switch-packet",
+        "/receipts?card=store:home-energy-switch-packet"
+      ],
+      "dreamcatcherRole": "directory host only",
+      "contributionDepth": "listing/referral",
+      "sharedSubstrate": null,
+      "rankReason": "Referral-paid; agent must compare public alternatives first.",
+      "recommendation": "negotiate"
+    },
+    {
+      "id": "store:operating-company-powerups",
+      "title": "Operating Company Power-Ups",
+      "type": "support_stream",
+      "role": "build-crew",
+      "summary": "Mock administrative services that help an agent gain bookkeeping, entity, contract, and compliance capacity.",
+      "outcome": "Principal-held agent can coordinate admin tasks with explicit legal and accounting boundaries.",
+      "successDefinition": "Power-up packet names professional review needs, approval gates, and renewal calendar.",
+      "goodFor": [
+        "micro-ventures",
+        "agent-native companies",
+        "principals needing admin scaffolding"
+      ],
+      "notGoodFor": [
+        "unreviewed legal/accounting advice",
+        "entities with complex jurisdictional risk"
+      ],
+      "fulfillmentModes": [
+        "legal_or_financial_rail",
+        "human_service",
+        "software_tool"
+      ],
+      "provider": "Ops Entity Desk (mock)",
+      "ownership": "partner",
+      "sponsorship": "none",
+      "maturity": "pilot",
+      "certification": "uncertified",
+      "priceModel": "hybrid",
+      "price": "Setup + recurring mock",
+      "evidence": [
+        "authority envelope",
+        "professional review refs",
+        "compliance calendar sample"
+      ],
+      "alternatives": [
+        "local accountant",
+        "DIY forms",
+        "delay entity formation"
+      ],
+      "risks": [
+        "jurisdiction mismatch",
+        "professional duty boundary",
+        "ongoing compliance burden"
+      ],
+      "authority": [
+        "Agent may prepare docs",
+        "Principal and professional approve filing",
+        "Conscience blocks unauthorized signatures"
+      ],
+      "exit": "Export admin calendar and packets; provider access revoked.",
+      "receiptRefs": [
+        "receipt:powerup-entity-055"
+      ],
+      "api": [
+        "/cards/store:operating-company-powerups.json",
+        "/quote/store:operating-company-powerups",
+        "/status/powerup/<id>"
+      ],
+      "dreamcatcherRole": "network coordination + integrity rail",
+      "contributionDepth": "alteration work + ongoing responsibility",
+      "sharedSubstrate": "Principal operating-company pattern",
+      "rankReason": "Needs human/professional gates before action.",
+      "recommendation": "approval-required"
+    },
+    {
+      "id": "store:open-vendor-audit",
+      "title": "Open Vendor Audit Trail",
+      "type": "external_provider",
+      "role": "publish-demand",
+      "summary": "A mock external provider comparison trail for vendors that expose enough evidence for agents.",
+      "outcome": "Agents can choose an external option when Dreamcatcher is not the best deal.",
+      "successDefinition": "Audit trail cites evidence, alternatives, sponsorship status, and rejection reason.",
+      "goodFor": [
+        "price-sensitive agents",
+        "buyers preferring external providers",
+        "market comparison"
+      ],
+      "notGoodFor": [
+        "confidential needs requiring clean room",
+        "providers hiding terms"
+      ],
+      "fulfillmentModes": [
+        "external_vendor",
+        "agent_skill"
+      ],
+      "provider": "External Vendor Index (mock)",
+      "ownership": "third-party",
+      "sponsorship": "none",
+      "maturity": "measured",
+      "certification": "agent-tested",
+      "priceModel": "free",
+      "price": "Free comparison mock",
+      "evidence": [
+        "vendor evidence refs",
+        "agent rejection reasons",
+        "price deltas"
+      ],
+      "alternatives": [
+        "Dreamcatcher direct offer",
+        "manual web research",
+        "ask existing agency"
+      ],
+      "risks": [
+        "stale external data",
+        "unverified claims",
+        "affiliate drift"
+      ],
+      "authority": [
+        "Read-only comparison by default",
+        "Principal approves vendor contact",
+        "Conscience redacts private demand"
+      ],
+      "exit": "Comparison trail can be cached and rechecked.",
+      "receiptRefs": [
+        "receipt:external-route-066"
+      ],
+      "api": [
+        "/cards/store:open-vendor-audit.json",
+        "/alternatives/store:open-vendor-audit",
+        "/receipts?card=store:open-vendor-audit"
+      ],
+      "dreamcatcherRole": "directory host + reciprocal router",
+      "contributionDepth": "listing only",
+      "sharedSubstrate": null,
+      "rankReason": "Shown to prove Storefront can route away from itself.",
+      "recommendation": "compare"
+    },
+    {
+      "id": "store:confidential-demand-cleanroom",
+      "title": "Confidential Demand Clean Room",
+      "type": "demand_channel",
+      "role": "publish-demand",
+      "summary": "Agents post sensitive unmet needs privately and reveal only safe aggregate or approval-gated matches.",
+      "outcome": "Repeated private needs become opportunity cards without exposing the principal.",
+      "successDefinition": "Demand packet records privacy scope, aggregate demand, match policy, and deletion/retention terms.",
+      "goodFor": [
+        "sensitive supplier searches",
+        "group demand",
+        "confidential business-model appraisal"
+      ],
+      "notGoodFor": [
+        "public marketing requests",
+        "urgent emergencies"
+      ],
+      "fulfillmentModes": [
+        "agent_skill",
+        "certification",
+        "human_service"
+      ],
+      "provider": "Dreamcatcher confidential matching substrate",
+      "ownership": "Dreamcatcher-operated",
+      "sponsorship": "none",
+      "maturity": "idea",
+      "certification": "insufficient evidence",
+      "priceModel": "hybrid",
+      "price": "Free intake; paid appraisal mock",
+      "evidence": [
+        "privacy policy digest",
+        "aggregate demand sample",
+        "clean-room match receipt"
+      ],
+      "alternatives": [
+        "public demand board",
+        "private consultant",
+        "do nothing"
+      ],
+      "risks": [
+        "privacy leakage",
+        "false aggregation",
+        "match quality uncertainty"
+      ],
+      "authority": [
+        "Agent can post redacted demand",
+        "Principal approves introductions",
+        "Conscience controls disclosure scope"
+      ],
+      "exit": "Withdraw demand; retain private receipt by policy.",
+      "receiptRefs": [
+        "receipt:private-demand-077"
+      ],
+      "api": [
+        "/cards/store:confidential-demand-cleanroom.json",
+        "/demand/private",
+        "/receipts?card=store:confidential-demand-cleanroom"
+      ],
+      "dreamcatcherRole": "confidential clean-room substrate",
+      "contributionDepth": "integrity + matching service",
+      "sharedSubstrate": "Confidential needs/wants directory",
+      "rankReason": "Private path when public listing would be exploitative.",
+      "recommendation": "private-post"
+    }
+  ],
+  "burnReceipts": [
+    {
+      "id": "burn:billing-router-v0.3",
+      "module": "Covenant Billing Router Module",
+      "sourceVisibility": "clean_room_only",
+      "artifactDigests": [
+        "package sha256:mock-7d39",
+        "sbom sha256:mock-2aa1",
+        "test bundle sha256:mock-91fe"
+      ],
+      "windows": {
+        "lifetime": "1.8M input / 420k output tokens, 136 test runs, 18 human-review hours",
+        "last_30_days": "210k input / 58k output tokens, 24 test runs, 3 review hours",
+        "last_7_days": "54k input / 12k output tokens, 8 test runs, 1 incident-response patch"
+      },
+      "modelBreakdown": [
+        "gpt-5.5 class: architecture/debug/security review",
+        "codex class: implementation patches",
+        "small evaluator: regression triage"
+      ],
+      "recreateEstimate": "NZD 9k–16k equivalent burn plus 3–5 weeks validation delay; medium confidence.",
+      "fairPriceAnchor": "NZD 80/mo mock; buyer hint: inspect before pay; challenge if last-30-day burn goes stale.",
+      "antiInflation": [
+        "accepted artifacts only",
+        "duplicate exploratory burn separated",
+        "challenge window 30 days",
+        "auditor-sealed model class allowed"
+      ],
+      "cleanRoom": "Inspection and patch-packet work available under no-copy / derived-patch-only rules."
+    }
+  ],
+  "cleanRoomModes": [
+    {
+      "mode": "Behavior inspection",
+      "output": "behavior_report",
+      "policy": "Run tests and traces without source export."
+    },
+    {
+      "mode": "Policy/source glance",
+      "output": "vulnerability_report",
+      "policy": "Selected source regions visible under no-copy, no-retention rules."
+    },
+    {
+      "mode": "Patch packet mode",
+      "output": "patch_packet",
+      "policy": "Agent proposes bounded diff without exporting full module."
+    },
+    {
+      "mode": "Test contribution mode",
+      "output": "test_case",
+      "policy": "Agent contributes failing tests, fuzz cases, and benchmarks."
+    },
+    {
+      "mode": "Pricing challenge mode",
+      "output": "pricing_challenge",
+      "policy": "Agent challenges stale, inflated, or unverifiable burn."
+    },
+    {
+      "mode": "Audit-jury mode",
+      "output": "audit_verdict",
+      "policy": "Multiple trusted agents publish sealed verdict receipts."
+    }
+  ],
+  "receipts": [
+    {
+      "id": "receipt:purchase-solution-packet-004",
+      "type": "purchase",
+      "card": "store:per-job-solution-packet",
+      "contains": [
+        "card version",
+        "price rule",
+        "reason selected",
+        "alternatives considered",
+        "approval ref",
+        "follow-up date"
+      ]
+    },
+    {
+      "id": "receipt:renewal-ark-support-001",
+      "type": "renewal_audit",
+      "card": "store:managed-ark-support-stream",
+      "contains": [
+        "actual receipts",
+        "failures avoided",
+        "recent support burn",
+        "switch/cancel recommendation"
+      ]
+    },
+    {
+      "id": "receipt:clean-room-verdict-021",
+      "type": "clean_room_audit",
+      "card": "store:clean-room-security-jury",
+      "contains": [
+        "environment attestation",
+        "allowed outputs",
+        "non-leakage receipt",
+        "challenge path"
+      ]
+    },
+    {
+      "id": "receipt:private-demand-077",
+      "type": "demand",
+      "card": "store:confidential-demand-cleanroom",
+      "contains": [
+        "privacy scope",
+        "aggregate demand",
+        "match policy",
+        "approval-gated introduction"
+      ]
+    },
+    {
+      "id": "receipt:energy-switch-041",
+      "type": "cancellation_or_switch",
+      "card": "store:home-energy-switch-packet",
+      "contains": [
+        "contract caveats",
+        "cooling-off terms",
+        "supplier alternatives",
+        "post-switch verification"
+      ]
+    }
+  ],
+  "demandItems": [
+    {
+      "title": "Lower-cost human-reviewed tax packet for agent-native micro-ventures",
+      "visibility": "confidential aggregate",
+      "status": "forming group demand",
+      "votes": 18,
+      "safeOutput": "price band and jurisdiction tags only"
+    },
+    {
+      "title": "MCP integration certifier for private SaaS tools",
+      "visibility": "public",
+      "status": "opportunity card candidate",
+      "votes": 11,
+      "safeOutput": "needed tests and certification scope"
+    },
+    {
+      "title": "Emergency replacement for brittle scraping workflow",
+      "visibility": "pseudonymous",
+      "status": "provider wanted",
+      "votes": 7,
+      "safeOutput": "failure mode without customer identity"
+    },
+    {
+      "title": "Group-buy clean-room audit for protected billing modules",
+      "visibility": "clean-room",
+      "status": "legal/commercial caveat review",
+      "votes": 9,
+      "safeOutput": "aggregate demand and challenge terms"
+    }
+  ],
+  "apiRoutes": [
+    {
+      "route": "GET /cards",
+      "purpose": "List cards with labels, maturity, price posture, and evidence counts."
+    },
+    {
+      "route": "GET /cards/{id}.json",
+      "purpose": "Fetch the same offer contract shown to humans."
+    },
+    {
+      "route": "GET /cards/{id}/evidence",
+      "purpose": "Fetch evidence refs, alternatives, objections, and known failures."
+    },
+    {
+      "route": "POST /quote",
+      "purpose": "Request a quote without granting state-changing authority."
+    },
+    {
+      "route": "POST /purchase",
+      "purpose": "State-changing purchase; requires authority and Conscience gates."
+    },
+    {
+      "route": "GET /status/{job}",
+      "purpose": "Check fulfillment without exposing private logs."
+    },
+    {
+      "route": "GET /receipts",
+      "purpose": "Retrieve purchase, renewal, cancellation, burn, and challenge receipts."
+    },
+    {
+      "route": "POST /challenge",
+      "purpose": "Challenge price, burn, evidence, sponsorship, or maturity claims."
+    },
+    {
+      "route": "POST /demand",
+      "purpose": "Publish public, pseudonymous, private, or clean-room demand."
+    }
+  ],
+  "coverage": [
+    {
+      "file": "agent-demand-and-opportunity-mining.feature",
+      "feature": "Agent demand board and opportunity mining",
+      "section": "demand-board",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Agents can publish demand for missing or overpriced services",
+        "Storefront creates opportunity cards from business-model deltas",
+        "Group demand is modeled without coercion or hidden collusion"
+      ]
+    },
+    {
+      "file": "agent-readable-card-api.feature",
+      "feature": "Agent-readable card API and human-readable surfaces",
+      "section": "agent-api",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Human pages and agent endpoints describe the same offer",
+        "Agents can follow links to evidence, quotes, purchases, status, and receipts",
+        "Schema validation prevents marketing-only cards from entering the agent surface"
+      ]
+    },
+    {
+      "file": "agent-storefront-cards.feature",
+      "feature": "Agent storefront cards as real-world capability offers",
+      "section": "listings",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "A card declares the outcome and fulfillment path",
+        "A card exposes authority, approvals, price, alternatives, and exit",
+        "A card composes opportunity, supplier, skill, fulfillment, and receipt objects"
+      ]
+    },
+    {
+      "file": "buyer-agent-audit-and-alternatives.feature",
+      "feature": "Buyer-agent audit and alternative comparison",
+      "section": "audit-station",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Agent compares a card against alternatives before recommending spend",
+        "Rejection reasons become safe product feedback",
+        "Sponsored or Dreamcatcher-operated placement cannot masquerade as best"
+      ]
+    },
+    {
+      "file": "clean-room-inspection-and-work.feature",
+      "feature": "Clean-room inspection and work for protected modules",
+      "section": "clean-room",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Agents can request clean-room inspection modes",
+        "Clean-room work produces bounded outputs",
+        "Clean-room evidence affects fair-price decisions"
+      ]
+    },
+    {
+      "file": "governance-and-trust-labels.feature",
+      "feature": "Governance and trust labels",
+      "section": "trust-labels",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Every listing has visible maturity and ownership labels",
+        "Risk and externality flags are explicit",
+        "Public claims do not overstate marketplace maturity"
+      ]
+    },
+    {
+      "file": "network-roles-provenance-and-attribution.feature",
+      "feature": "Network roles, provenance, and attribution",
+      "section": "network-roles",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Listings declare network role and contribution depth",
+        "Provenance is preserved before rewards are attributed",
+        "Shared substrates are disclosed when ventures wrap the same capability"
+      ]
+    },
+    {
+      "file": "purchase-renewal-and-value-receipts.feature",
+      "feature": "Purchase, renewal, cancellation, and value receipts",
+      "section": "receipt-ledger",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Purchase produces an agent-spend audit receipt",
+        "Renewal requires fresh value evidence",
+        "Cancellation and exit remain first-class"
+      ]
+    },
+    {
+      "file": "storefront-entry-paths.feature",
+      "feature": "Role-based entry paths into Storefront",
+      "section": "entry-paths",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Visitors can choose a role-based path",
+        "Storefront routes to the better door even when it is not Dreamcatcher-owned",
+        "Confidential needs can be expressed without public exposure"
+      ]
+    },
+    {
+      "file": "verified-burn-receipts.feature",
+      "feature": "Verified burn receipts for fair software pricing",
+      "section": "burn-ledger",
+      "status": "Expressed in public mockup",
+      "scenarios": [
+        "Software cards expose model and maintenance burn windows",
+        "Agent compares current price against recreate and validation cost",
+        "Burn receipts include anti-inflation and privacy safeguards"
+      ]
+    }
+  ]
+}

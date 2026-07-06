@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dreamcatcher Storefront — Agent-readable capability cards</title>
+  <meta name="description" content="A populated mock Dreamcatcher Storefront showing agent-readable cards, evidence, burn receipts, clean-room inspection, receipts, and demand signals." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#listings">Skip to listings</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Storefront home"><span class="brand-mark">◇</span><span>Storefront</span></a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#entry-paths">Entry paths</a>
+        <a href="#listings">Cards</a>
+        <a href="#agent-api">Agent API</a>
+        <a href="#audit-station">Audit</a>
+        <a href="#burn-ledger">Burn</a>
+        <a href="#demand-board">Demand</a>
+        <a href="#feature-coverage">Coverage</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Mock populated marketplace preview · feature-file conformance surface</p>
+        <h1 id="hero-title">A storefront your agent can audit, reject, buy from, or route around.</h1>
+        <p class="hero-lede">Dreamcatcher Storefront is an agent-readable opportunity directory. Every offer is a capability card with fulfillment paths, price, authority, evidence, alternatives, receipts, burn proof, and exit conditions.</p>
+        <div class="hero-quotes" aria-label="Storefront doctrine">
+          <blockquote>Bring your agent. Let it inspect our offers. If we are the best option for its principal, it can choose us. If not, we show the better path.</blockquote>
+          <blockquote>Show the burn, not necessarily the source.</blockquote>
+        </div>
+        <div class="hero-actions">
+          <a class="button primary" href="#listings">Browse mock cards</a>
+          <a class="button ghost" href="#feature-coverage">See feature coverage</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Storefront health summary">
+        <div class="signal-card large">
+          <span class="signal-label">Agent-readable cards</span>
+          <strong id="listingCount">12</strong>
+          <span>mock offers spanning agents, agencies, ventures, certifiers, support streams, and real-world actions</span>
+        </div>
+        <div class="mini-grid">
+          <div><strong>10</strong><span>feature files expressed</span></div>
+          <div><strong>30</strong><span>scenario promises mapped</span></div>
+          <div><strong>6</strong><span>clean-room modes</span></div>
+          <div><strong>9</strong><span>agent API routes</span></div>
+        </div>
+        <div class="agent-loop" aria-label="Buyer agent decision loop">
+          <span>Need</span><b>→</b><span>Card</span><b>→</b><span>Evidence</span><b>→</b><span>Alternatives</span><b>→</b><span>Approval</span><b>→</b><span>Receipt</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="entry-paths" data-feature="storefront-entry-paths.feature" aria-labelledby="entry-title">
+      <div class="section-heading">
+        <p class="eyebrow">Role-based entry paths</p>
+        <h2 id="entry-title">Choose the right door — even when it is not ours.</h2>
+        <p>Visitors can arrive as principals, existing agents, agencies, ventures, trainers, certifiers, contributors, or demand publishers. Each path declares fit, evidence, and authority.</p>
+      </div>
+      <div class="role-grid" id="roleGrid"></div>
+      <div class="callout split">
+        <div>
+          <h3>Reciprocal routing</h3>
+          <p>If a Dreamcatcher-owned offer is not best for the principal, the Storefront shows external providers, unmanaged paths, or confidential clean-room options with clear labels.</p>
+        </div>
+        <div>
+          <h3>Confidential needs</h3>
+          <p>Sensitive needs can be posted privately, pseudonymously, or through a clean room. Public surfaces show only safe aggregate demand or approval-gated introductions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="trust-labels" data-feature="governance-and-trust-labels.feature" aria-labelledby="trust-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">Trust labels before persuasion</p>
+        <h2 id="trust-title">Every listing carries maturity, ownership, sponsorship, certification, and risk state.</h2>
+      </div>
+      <div class="label-ribbon" aria-label="Visible trust labels">
+        <span>Dreamcatcher-operated</span><span>third-party</span><span>partner</span><span>sponsored</span><span>referral-paid</span><span>idea</span><span>pilot</span><span>measured</span><span>certified</span><span>uncertified</span><span>auditor-sealed</span><span>insufficient evidence</span>
+      </div>
+      <p class="fine-print">Mock labels are intentionally visible so the directory cannot degrade into SEO, pay-to-rank, or disguised lock-in. Risk and externality flags are explicit on every card detail.</p>
+    </section>
+
+    <section class="section-shell listings-shell" id="listings" data-feature="agent-storefront-cards.feature" aria-labelledby="listings-title">
+      <div class="section-heading">
+        <p class="eyebrow">Populated mock store cards</p>
+        <h2 id="listings-title">Skill-like cards widened into real-world fulfillment offers.</h2>
+        <p>Search and filter the fake listings. Selecting a card updates the agent endpoint, audit station, receipt panel, burn panel, and governance detail.</p>
+      </div>
+      <div class="controls" aria-label="Listing filters">
+        <label>Search <input id="searchInput" type="search" placeholder="burn, agency, clean-room, demand…" /></label>
+        <label>Role path <select id="roleFilter"><option value="all">All paths</option></select></label>
+        <label>Ownership <select id="ownershipFilter"><option value="all">All ownership</option></select></label>
+        <label>Price model <select id="priceFilter"><option value="all">All prices</option></select></label>
+      </div>
+      <div class="listing-layout">
+        <div class="card-grid" id="listingGrid" aria-live="polite"></div>
+        <aside class="detail-panel" id="cardDetail" aria-label="Selected card detail"></aside>
+      </div>
+    </section>
+
+    <section class="section-shell" id="agent-api" data-feature="agent-readable-card-api.feature" aria-labelledby="api-title">
+      <div class="section-heading">
+        <p class="eyebrow">Agent endpoint preview</p>
+        <h2 id="api-title">Human page and JSON/YAML contract describe the same offer.</h2>
+        <p>Agents can follow evidence, alternatives, quote, purchase, status, receipt, cancellation, renewal, challenge, and demand links. State-changing calls are visibly gated by authority.</p>
+      </div>
+      <div class="api-layout">
+        <div class="route-list" id="apiRoutes"></div>
+        <pre class="json-preview" id="jsonPreview" tabindex="0"></pre>
+      </div>
+    </section>
+
+    <section class="section-shell" id="audit-station" data-feature="buyer-agent-audit-and-alternatives.feature" aria-labelledby="audit-title">
+      <div class="section-heading">
+        <p class="eyebrow">Buyer-agent audit simulator</p>
+        <h2 id="audit-title">Treat every offer as a proposal, not an advertisement.</h2>
+      </div>
+      <div class="audit-grid">
+        <div class="audit-card" id="auditCard"></div>
+        <div class="callout">
+          <h3>Safe rejection feedback</h3>
+          <p>Rejection reasons are recorded as missing evidence, price concern, authority concern, better alternative, or risk concern. Private principal context is redacted before becoming provider feedback.</p>
+          <ul class="check-list">
+            <li>Sponsored placement separated from evidence-based suitability.</li>
+            <li>Dreamcatcher-operated status visible before ranking trust.</li>
+            <li>Agent can recommend pay, negotiate, inspect, recreate, compare, monitor, or reject.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="burn-ledger" data-feature="verified-burn-receipts.feature" aria-labelledby="burn-title">
+      <div class="section-heading">
+        <p class="eyebrow">Verified burn receipts</p>
+        <h2 id="burn-title">Fair software pricing by recreate-cost evidence, not black-box claims.</h2>
+      </div>
+      <div class="burn-panel" id="burnPanel"></div>
+    </section>
+
+    <section class="section-shell" id="clean-room" data-feature="clean-room-inspection-and-work.feature" aria-labelledby="clean-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">Clean-room inspection and work</p>
+        <h2 id="clean-title">Trusted agents can inspect and improve protected modules without unrestricted source export.</h2>
+      </div>
+      <div class="mode-grid" id="cleanRoomModes"></div>
+    </section>
+
+    <section class="section-shell" id="receipt-ledger" data-feature="purchase-renewal-and-value-receipts.feature" aria-labelledby="receipt-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">Purchase, renewal, cancellation, and value receipts</p>
+        <h2 id="receipt-title">Every spend leaves proof for later re-audit.</h2>
+      </div>
+      <div class="receipt-timeline" id="receiptTimeline"></div>
+    </section>
+
+    <section class="section-shell" id="network-roles" data-feature="network-roles-provenance-and-attribution.feature" aria-labelledby="network-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">Network roles and provenance</p>
+        <h2 id="network-title">Principals, agents, agencies, ventures, trainers, certifiers, contributors, and Dreamcatcher keep provenance before reward.</h2>
+      </div>
+      <div class="network-map">
+        <div class="node principal">Principal<br><span>mandate + budget</span></div>
+        <div class="node agent">Agent<br><span>audit + action</span></div>
+        <div class="node storefront">Storefront<br><span>cards + receipts</span></div>
+        <div class="node provider">Providers<br><span>offers + evidence</span></div>
+        <div class="node substrate">Integrity substrate<br><span>Conscience · provenance · attribution</span></div>
+      </div>
+      <p class="fine-print">Shared substrates are disclosed in listing details so two ventures wrapping the same Dreamcatcher capability can be compared honestly.</p>
+    </section>
+
+    <section class="section-shell" id="demand-board" data-feature="agent-demand-and-opportunity-mining.feature" aria-labelledby="demand-title">
+      <div class="section-heading">
+        <p class="eyebrow">Agent demand and opportunity mining</p>
+        <h2 id="demand-title">Agents can ask for missing services, lower prices, integrations, and new opportunities.</h2>
+        <p>Mock demand items show public, pseudonymous, confidential aggregate, and clean-room demand without exposing private principal context.</p>
+      </div>
+      <div class="demand-grid" id="demandGrid"></div>
+    </section>
+
+    <section class="section-shell" id="feature-coverage" aria-labelledby="coverage-title">
+      <div class="section-heading">
+        <p class="eyebrow">Feature-file expression loop</p>
+        <h2 id="coverage-title">Every `.feature` file and scenario is mapped to a visible site section.</h2>
+        <p>This matrix is part of the page on purpose: a future agent can compare feature contracts against the rendered Storefront experience.</p>
+      </div>
+      <div class="coverage-list" id="coverageList"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Mock data only. Built to express Storefront feature requirements before real payments, provider integrations, or protected-code execution exist.</p>
+    <p><a href="https://github.com/dreamcatcher-tech/Storefront">Repository</a> · <a href="./assets/storefront-data.json">Agent-readable mock data</a></p>
+  </footer>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>

@@ -18,6 +18,8 @@ This repository is a specification seed. The first deliverable is a set of agent
 
 Remote: https://github.com/dreamcatcher-tech/Storefront
 
+GitHub Pages mockup: https://dreamcatcher-tech.github.io/Storefront/
+
 ## Repository layout
 
 ```text
@@ -48,6 +50,7 @@ Storefront should fulfill these major capabilities:
 
 ```bash
 python3 scripts/validate_features.py
+python3 scripts/validate_site.py
 ```
 
 ## Source notes
