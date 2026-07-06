@@ -16,6 +16,8 @@ Core doctrine:
 
 This repository is a specification seed. The first deliverable is a set of agent-readable `.feature` files and schemas that describe what Storefront must fulfill before implementation.
 
+Remote: https://github.com/dreamcatcher-tech/Storefront
+
 ## Repository layout
 
 ```text
