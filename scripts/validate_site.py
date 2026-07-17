@@ -8,7 +8,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site'
 DATA = SITE / 'assets' / 'storefront-data.json'
-REQUIRED_FILES = [SITE/'index.html', SITE/'styles.css', SITE/'app.js', DATA, ROOT/'.github/workflows/pages.yml']
+NEED_SCHEMA = ROOT / 'schemas' / 'unmet_need_submission.yaml'
+REQUIRED_FILES = [SITE/'index.html', SITE/'styles.css', SITE/'app.js', DATA, NEED_SCHEMA, ROOT/'.github/workflows/pages.yml']
 REQUIRED_SECTIONS = {
     'storefront-entry-paths.feature': 'entry-paths',
     'agent-storefront-cards.feature': 'listings',
@@ -46,6 +47,7 @@ def main() -> int:
     css = (SITE/'styles.css').read_text(encoding='utf-8')
     app = (SITE/'app.js').read_text(encoding='utf-8')
     workflow = (ROOT/'.github/workflows/pages.yml').read_text(encoding='utf-8')
+    need_schema = NEED_SCHEMA.read_text(encoding='utf-8')
     data = json.loads(DATA.read_text(encoding='utf-8'))
     features = parse_features()
 
@@ -61,6 +63,11 @@ def main() -> int:
     for token in ['@media (max-width: 1020px)', '@media (max-width: 700px)', '@media (max-width: 390px)']:
         if token not in css:
             return fail(f'responsive breakpoint missing: {token}')
+    for token in ['principal_direct', 'ark_delegated', 'authority_receipt_ref', 'success_test',
+                  'permission_to_aggregate', 'permission_to_promote', 'existing_solution_found',
+                  'unmet_verified', 'opportunity_candidate']:
+        if token not in need_schema:
+            return fail(f'unmet-need schema missing contract token: {token}')
 
     # Coverage must exactly name every feature and scenario.
     coverage = {item['file']: item for item in data.get('coverage', [])}
@@ -114,14 +121,25 @@ def main() -> int:
         return fail('expected six clean-room modes')
     if len(data.get('receipts', [])) < 5:
         return fail('expected receipt ledger examples')
-    if not any(item.get('visibility') == 'confidential aggregate' for item in data.get('demandItems', [])):
-        return fail('missing confidential aggregate demand item')
-    if len(data.get('apiRoutes', [])) < 9:
-        return fail('expected agent API routes')
+    demand_items = data.get('demandItems', [])
+    if not any(item.get('visibility') == 'aggregate-only' for item in demand_items):
+        return fail('missing aggregate-only demand item')
+    if not all(item.get('origin') and int(item.get('votes', 0)) > 0 for item in demand_items):
+        return fail('every demand item needs origin and positive unique-principal evidence')
+    if not any('principal-direct' in item.get('origin', '') for item in demand_items):
+        return fail('missing direct-principal demand origin')
+    if not any('Ark-delegated' in item.get('origin', '') for item in demand_items):
+        return fail('missing Ark-delegated demand origin')
+    routes = {item.get('route') for item in data.get('apiRoutes', [])}
+    for route in {'POST /needs', 'GET /needs/{id}', 'PATCH /needs/{id}', 'GET /needs/clusters'}:
+        if route not in routes:
+            return fail(f'missing unmet-need API route: {route}')
+    if len(routes) < 12:
+        return fail('expected at least twelve agent API routes')
 
     # Make sure visible page/app mentions the core doctrines.
     combined = html + css + app + json.dumps(data, ensure_ascii=False)
-    for phrase in ['Bring your agent', 'Show the burn', 'clean-room', 'agent-spend audit', 'alternatives', 'Conscience', 'provenance', 'cancellation', 'renewal', 'demand']:
+    for phrase in ['Bring your agent', 'Show the burn', 'clean-room', 'agent-spend audit', 'alternatives', 'Conscience', 'provenance', 'cancellation', 'renewal', 'unmet need', 'principal-direct', 'Ark-delegated', 'Search before build', 'unique authorized principal']:
         if phrase.lower() not in combined.lower():
             return fail(f'missing required phrase: {phrase}')
 

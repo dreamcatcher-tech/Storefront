@@ -1,0 +1,93 @@
+# Draft contract for Storefront's MVP unmet-need registry.
+# This is a human/agent-readable schema sketch, not yet an enforced JSON Schema.
+unmet_need_submission:
+  need_id: need:<stable-id>
+  version: <version-or-digest>
+  status: <draft | submitted | matching | existing_solution_found | unmet_verified | clustered | opportunity_candidate | pilot | fulfilled | withdrawn | expired>
+  submitted_at: <timestamp>
+  expires_at: <timestamp>
+
+  origin:
+    kind: <principal_direct | ark_delegated>
+    principal_uniqueness_ref: <private-or-committed-principal-ref>
+    principal_public_ref: <optional>
+    ark_ref: <optional-agent-lineage-or-birth-certificate-ref>
+    authority_receipt_ref: <required-for-ark-delegated-submission>
+    provenance_receipt_ref: <signed-origin-receipt>
+
+  need:
+    desired_outcome: <what should change for the principal>
+    observable_success_test: <how a result will be accepted or rejected>
+    current_workaround: <what is done now>
+    why_current_paths_fail: []
+    recurrence: <one_off | periodic | continuous>
+    frequency: <optional-interval-or-count>
+    urgency: <low | medium | high | critical>
+    jurisdiction_or_region: []
+    required_capabilities: []
+    must_not_do: []
+    constraints: []
+
+  economics:
+    current_spend: <optional-range>
+    avoidable_loss_or_delay: <optional-range>
+    desired_price_or_budget: <optional-range>
+    willingness_to_pay: <none | exploratory | quoted | approved_budget>
+    willingness_to_commit:
+      kind: <none | interview | pilot | conditional_purchase | group_buy>
+      amount_or_quantity: <optional>
+      expiry: <optional>
+
+  evidence:
+    attempted_alternatives: []
+    failed_attempt_receipts: []
+    spend_or_loss_receipts: []
+    supporting_artifacts: []
+    assumptions: []
+    uncertainty_flags: []
+
+  release_policy:
+    visibility: <public | pseudonymous | aggregate_only | private | confidential_clean_room>
+    public_summary: <optional-approved-summary>
+    aggregate_fields_allowed: []
+    permission_to_publish_summary: false
+    permission_to_aggregate: false
+    permission_to_contact_providers: false
+    permission_to_reveal_identity: false
+    permission_to_reuse_private_context: false
+    permission_to_promote: false
+    permission_to_attribute_origin: true
+    each_permission_requires_separate_receipt: true
+
+  matching:
+    existing_storefront_cards_checked: []
+    external_paths_checked: []
+    request_for_quote_refs: []
+    provider_responses: []
+    procurement_result: <pending | existing_path_found | no_credible_path | expired>
+    no_fit_reasons: []
+
+  clustering:
+    cluster_ref: <optional>
+    similarity_basis: <optional-safe-description>
+    unique_authorized_principal_count: <optional>
+    source_mix:
+      principal_direct: <optional-count>
+      ark_delegated: <optional-count>
+    recurrence_evidence: []
+    anti_sybil_receipt_ref: <optional-private-proof>
+
+  opportunity:
+    opportunity_case_ref: <optional>
+    threshold_policy_ref: <optional>
+    build_partner_buy_options: []
+    smallest_paid_test: <optional>
+    contribution_and_reward_policy_ref: <optional-no-implied-entitlement>
+
+  receipts:
+    submission_receipt_ref: <signed-receipt>
+    release_receipt_refs: []
+    matching_receipt_refs: []
+    fulfillment_receipt_refs: []
+    value_receipt_refs: []
+    withdrawal_or_expiry_receipt_ref: <optional>

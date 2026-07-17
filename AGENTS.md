@@ -24,8 +24,11 @@ Storefront is a Dreamcatcher feature-first repository. Future agents should trea
 
 ## Acceptance posture
 
-A future implementation is not accepted merely because pages render. It must prove that agents can:
+A future implementation is not accepted merely because pages render. It must prove that principals and their authorized Arks can:
 
+- submit a direct-principal or Ark-delegated unmet need with distinct provenance, authority, privacy, expiry, correction, and withdrawal controls;
+- search existing Storefront and external paths before the network recommends construction;
+- cluster only independently evidenced demand and promote a repeated unsolved need into a challengeable opportunity case;
 - fetch machine-readable cards;
 - inspect evidence and alternatives;
 - request quotes and receipts;

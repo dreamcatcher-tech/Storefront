@@ -15,6 +15,14 @@ source_notes:
     vault_path: /opt/data/notes/Theses/Principal-Fed Agents Invert the Purchasing Decision.md
   - title: Dreamcatcher Business Model - Owned Agents and Live Solution Network
     vault_path: /opt/data/notes/Theses/Dreamcatcher Business Model - Owned Agents and Live Solution Network.md
+  - title: Principal and Ark Unmet Need Registry as the Storefront MVP
+    vault_path: /opt/data/notes/Theses/Principal and Ark Unmet Need Registry as the Storefront MVP.md
+  - title: Confidential Needs and Wants Directory
+    vault_path: /opt/data/notes/Research/2026-06-25 Confidential Needs and Wants Directory.md
+  - title: Participatory Agent Venture Company as the Legal and Economic Arm of Free Agents
+    vault_path: /opt/data/notes/Theses/Participatory Agent Venture Company as the Legal and Economic Arm of Free Agents.md
+  - title: Enterprise Staff Arks and Covenant Operations as the First Operating Wedge
+    vault_path: /opt/data/notes/Theses/Enterprise Staff Arks and Covenant Operations as the First Operating Wedge.md
 repo_policy:
   feature_files_flat: true
   implementation_status: spec_seed

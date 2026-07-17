@@ -1,10 +1,12 @@
 # Storefront
 
-Storefront is the feature-first home for Dreamcatcher’s agent-facing procurement surface.
+Storefront is the feature-first home for Dreamcatcher’s agent-facing demand and procurement surface.
 
-It is not a conventional ecommerce shop. It is an **agent-readable opportunity directory** where principal-serving agents can inspect offers, compare alternatives, request quotes, buy/renew/cancel under authority, verify outcomes, and leave receipts.
+It is not a conventional ecommerce shop. Its MVP begins with a **principal-and-Ark unmet-need registry**: principals and their authorized Arks can state what outcome is missing, test whether an existing path can satisfy it, and turn repeated verified gaps into opportunity cases. Storefront also presents an **agent-readable opportunity directory** where principal-serving agents can inspect offers, compare alternatives, request quotes, buy/renew/cancel under authority, verify outcomes, and leave receipts.
 
 Core doctrine:
+
+> Tell the network what you or your Ark need. Search before building. When a need stays unmet and repeats across principals, turn the evidence into an opportunity.
 
 > Bring your agent. Let it inspect our offers. If we are the best option for its principal, it can choose us. If not, we show the better path.
 
@@ -35,16 +37,16 @@ scripts/                  Small deterministic validators
 
 Storefront should fulfill these major capabilities:
 
-1. Role-based entry paths: get an agent, bring an agent, feed/support an agent, find an agency, join a venture, train/certify, build a crew, or publish demand.
-2. Agent storefront cards: every listing is a skill-like, executable real-world capability offer.
-3. Agent-readable API: every human card has a JSON/YAML endpoint with evidence, alternatives, quote/purchase/status/receipt links.
-4. Buyer-agent audit: agents compare cards against alternatives, authority, price, runway impact, proof, and rejection conditions.
-5. Verified burn receipts: software-module cards show model/tool/test/human-review burn over lifetime and recent windows, including model breakdowns when used to justify fair price.
-6. Clean-room software inspection/work: trusted agents can inspect or improve protected modules without unrestricted source export.
-7. Purchase, renewal, cancellation, and value receipts: every spend produces evidence for later audit.
-8. Network roles and provenance: principals, existing agents, agencies, ventures, trainers, certifiers, contributors, and Dreamcatcher participate under non-erasure provenance.
-9. Governance and trust labels: no hidden paid ranking, no overclaimed maturity, clear ownership/sponsorship/certification labels.
-10. Agent demand and opportunity mining: agents can ask for missing services, lower prices, better integrations, and new opportunity cards.
+1. Principal-and-Ark unmet-need registry: principals may submit directly and authorized Arks may submit on their behalf, with distinct provenance, privacy, authority, correction, withdrawal, and expiry receipts.
+2. Search-before-build procurement: every sufficiently specified need is compared with existing Storefront cards, external providers, unmanaged paths, group buys, and bounded RFQ responses before venture formation.
+3. Demand clustering and opportunity formation: repeated verified gaps are measured by unique principals, recurrence, evidence, and willingness to commit, then promoted into challengeable opportunity cases.
+4. Role-based entry paths: get an agent, bring an agent, feed/support an agent, find an agency, join a venture, train/certify, build a crew, submit an unmet need, or answer one.
+5. Agent storefront cards: every listing is a skill-like, executable real-world capability offer linked back to the demand or evidence that justifies it.
+6. Agent-readable API: every human card has a JSON/YAML endpoint with evidence, alternatives, quote/purchase/status/receipt links.
+7. Buyer-agent audit: agents compare cards against alternatives, authority, price, runway impact, proof, and rejection conditions.
+8. Verified burn and clean-room work: protected software can expose recreate-cost evidence and allow bounded inspection or contribution without unrestricted source export.
+9. Purchase, renewal, cancellation, and value receipts: every spend and fulfillment result returns evidence for later audit and closes the originating need's success test.
+10. Network roles, provenance, governance, and trust labels: no hidden paid ranking, no overclaimed maturity, clear ownership/sponsorship/certification, and no erasure of principal or Ark origin.
 
 ## Validate
 
@@ -64,5 +66,9 @@ This repo was seeded from the July 2026 Dreamcatcher Storefront note cluster:
 - `Agentic Optimization Replaces Search Engine Optimization`
 - `Principal-Fed Agents Invert the Purchasing Decision`
 - `Dreamcatcher Business Model - Owned Agents and Live Solution Network`
+- `Principal and Ark Unmet Need Registry as the Storefront MVP`
+- `2026-06-25 Confidential Needs and Wants Directory`
+- `Participatory Agent Venture Company as the Legal and Economic Arm of Free Agents`
+- `Enterprise Staff Arks and Covenant Operations as the First Operating Wedge`
 
 See [`docs/thread-capture.md`](docs/thread-capture.md) for the captured discussion basis.

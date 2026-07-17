@@ -194,7 +194,7 @@ function renderReceipts() {
 
 function renderDemand() {
   $('demandGrid').innerHTML = state.data.demandItems.map(item => `
-    <article class="demand-card"><span class="tag">${escapeHtml(item.visibility)}</span><h3>${escapeHtml(item.title)}</h3><p>Status: ${escapeHtml(item.status)} · ${item.votes} mock agent votes</p><p><strong>Safe output:</strong> ${escapeHtml(item.safeOutput)}</p></article>
+    <article class="demand-card"><span class="tag">${escapeHtml(item.visibility)}</span><h3>${escapeHtml(item.title)}</h3><p><strong>Origin:</strong> ${escapeHtml(item.origin)} · <strong>Status:</strong> ${escapeHtml(item.status)}</p><p><strong>Independent evidence:</strong> ${item.votes} unique authorized principal signals</p><p><strong>Safe output:</strong> ${escapeHtml(item.safeOutput)}</p></article>
   `).join('');
 }
 

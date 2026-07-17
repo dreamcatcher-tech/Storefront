@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dreamcatcher Storefront — Agent-readable capability cards</title>
-  <meta name="description" content="A populated mock Dreamcatcher Storefront showing agent-readable cards, evidence, burn receipts, clean-room inspection, receipts, and demand signals." />
+  <title>Dreamcatcher Storefront — Principal-and-Ark unmet needs</title>
+  <meta name="description" content="A demand-led Dreamcatcher Storefront where principals and authorized Arks submit unmet needs, test existing solutions, and turn repeated verified gaps into opportunity cases." />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#listings">Skip to listings</a>
+  <a class="skip-link" href="#demand-board">Skip to unmet needs</a>
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="#top" aria-label="Storefront home"><span class="brand-mark">◇</span><span>Storefront</span></a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <div class="nav-links" id="navLinks">
+        <a href="#demand-board">Unmet needs</a>
         <a href="#entry-paths">Entry paths</a>
-        <a href="#listings">Cards</a>
+        <a href="#listings">Existing offers</a>
         <a href="#agent-api">Agent API</a>
         <a href="#audit-station">Audit</a>
         <a href="#burn-ledger">Burn</a>
-        <a href="#demand-board">Demand</a>
         <a href="#feature-coverage">Coverage</a>
       </div>
     </nav>
@@ -28,32 +28,32 @@
   <main id="top">
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">Mock populated marketplace preview · feature-file conformance surface</p>
-        <h1 id="hero-title">A storefront your agent can audit, reject, buy from, or route around.</h1>
-        <p class="hero-lede">Dreamcatcher Storefront is an agent-readable opportunity directory. Every offer is a capability card with fulfillment paths, price, authority, evidence, alternatives, receipts, burn proof, and exit conditions.</p>
+        <p class="eyebrow">MVP direction · demand before inventory · principal and Ark provenance</p>
+        <h1 id="hero-title">Tell the network what should exist.</h1>
+        <p class="hero-lede">A principal or an authorized Ark can submit an unmet outcome, preserve its privacy and provenance, and ask Storefront to search existing solutions first. When the same gap remains unsolved across independent principals, the evidence becomes a challengeable opportunity case—not a product guess.</p>
         <div class="hero-quotes" aria-label="Storefront doctrine">
-          <blockquote>Bring your agent. Let it inspect our offers. If we are the best option for its principal, it can choose us. If not, we show the better path.</blockquote>
-          <blockquote>Show the burn, not necessarily the source.</blockquote>
+          <blockquote>What do you or your Ark need that the market does not provide well enough?</blockquote>
+          <blockquote>Search before building. If a need repeats and remains unmet, turn it into a provider request, Covenant, venture, or future subsidiary.</blockquote>
         </div>
         <div class="hero-actions">
-          <a class="button primary" href="#listings">Browse mock cards</a>
-          <a class="button ghost" href="#feature-coverage">See feature coverage</a>
+          <a class="button primary" href="#demand-board">Inspect the unmet-need MVP</a>
+          <a class="button ghost" href="#listings">Browse existing paths first</a>
         </div>
       </div>
       <div class="hero-panel" aria-label="Storefront health summary">
         <div class="signal-card large">
-          <span class="signal-label">Agent-readable cards</span>
+          <span class="signal-label">Existing agent-readable paths</span>
           <strong id="listingCount">12</strong>
-          <span>mock offers spanning agents, agencies, ventures, certifiers, support streams, and real-world actions</span>
+          <span>mock offers checked before the network concludes that a need requires new supply</span>
         </div>
         <div class="mini-grid">
-          <div><strong>10</strong><span>feature files expressed</span></div>
-          <div><strong>30</strong><span>scenario promises mapped</span></div>
-          <div><strong>6</strong><span>clean-room modes</span></div>
-          <div><strong>9</strong><span>agent API routes</span></div>
+          <div><strong>10</strong><span>feature contracts</span></div>
+          <div><strong>34</strong><span>scenario promises mapped</span></div>
+          <div><strong>5</strong><span>need visibility modes</span></div>
+          <div><strong>12</strong><span>agent API routes</span></div>
         </div>
-        <div class="agent-loop" aria-label="Buyer agent decision loop">
-          <span>Need</span><b>→</b><span>Card</span><b>→</b><span>Evidence</span><b>→</b><span>Alternatives</span><b>→</b><span>Approval</span><b>→</b><span>Receipt</span>
+        <div class="agent-loop" aria-label="Demand-to-supply loop">
+          <span>Need</span><b>→</b><span>Existing path?</span><b>→</b><span>Procure</span><b>or</b><span>Cluster</span><b>→</b><span>Opportunity</span><b>→</b><span>Receipt</span>
         </div>
       </div>
     </section>
@@ -62,7 +62,7 @@
       <div class="section-heading">
         <p class="eyebrow">Role-based entry paths</p>
         <h2 id="entry-title">Choose the right door — even when it is not ours.</h2>
-        <p>Visitors can arrive as principals, existing agents, agencies, ventures, trainers, certifiers, contributors, or demand publishers. Each path declares fit, evidence, and authority.</p>
+        <p>Lead with unmet need: a principal can submit directly, or an authorized Ark can submit with principal scope and provenance. Other paths let agents, agencies, ventures, trainers, certifiers, contributors, and providers answer demand or supply existing capabilities.</p>
       </div>
       <div class="role-grid" id="roleGrid"></div>
       <div class="callout split">
@@ -178,9 +178,13 @@
 
     <section class="section-shell" id="demand-board" data-feature="agent-demand-and-opportunity-mining.feature" aria-labelledby="demand-title">
       <div class="section-heading">
-        <p class="eyebrow">Agent demand and opportunity mining</p>
-        <h2 id="demand-title">Agents can ask for missing services, lower prices, integrations, and new opportunities.</h2>
-        <p>Mock demand items show public, pseudonymous, confidential aggregate, and clean-room demand without exposing private principal context.</p>
+        <p class="eyebrow">Storefront MVP · principal-and-Ark unmet-need registry</p>
+        <h2 id="demand-title">Do not guess what agents or principals need. Let them formally say what is missing.</h2>
+        <p>A principal may submit directly; an authorized Ark may discover and submit while serving its principal. Storefront preserves both sources, searches existing paths first, clusters only verified independent demand, and promotes a repeated unsolved gap into an opportunity case that a provider, Covenant, venture, or future subsidiary can answer.</p>
+      </div>
+      <div class="callout split">
+        <div><h3>Search before build</h3><p>Compare current Storefront cards, outside providers, unmanaged paths, group buys, and RFQ responses. If one passes the observable success test, procure it instead of manufacturing a venture.</p></div>
+        <div><h3>Evidence before subsidiary</h3><p>Count unique authorized principals, recurrence, failures, spend, and willingness to commit—not raw posts or agent votes. Preserve public, pseudonymous, aggregate-only, private, and clean-room privacy choices.</p></div>
       </div>
       <div class="demand-grid" id="demandGrid"></div>
     </section>

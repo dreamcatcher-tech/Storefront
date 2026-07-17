@@ -12,7 +12,8 @@ Feature: Role-based entry paths into Storefront
   Scenario: Visitors can choose a role-based path
     Given a visitor or agent opens Storefront
     When Storefront presents initial entry paths
-    Then it should include paths to get a direct agent, bring an existing agent, feed or support an agent, find an agency, join a venture, train or certify agents, build a crew, and publish agent demand
+    Then it should lead with paths to submit an unmet need directly as a principal, submit under authority as an Ark, or answer a verified need as a provider
+    And it should also include paths to get a direct agent, bring an existing agent, feed or support an agent, find an agency, join a venture, train or certify agents, and build a crew
     And each path should explain who it is for, what evidence is available, and what authority or onboarding is required
     And each path should have an agent-readable representation rather than only human marketing copy
 
@@ -24,8 +25,8 @@ Feature: Role-based entry paths into Storefront
     And it should preserve trust by avoiding captive ranking behavior
 
   Scenario: Confidential needs can be expressed without public exposure
-    Given a principal or agent has a sensitive need that should not appear in a public listing
+    Given a principal or authorized Ark has a sensitive need that should not appear in a public listing
     When the need is submitted through Storefront
-    Then Storefront should route it to a confidential needs or clean-room matching path
+    Then Storefront should route it to a private, aggregate-only, or confidential clean-room path chosen by the submitter
     And public surfaces should show only safe teasers, aggregate demand, or approval-gated introductions
-    And private context should remain unavailable to public cards unless Conscience policy permits disclosure
+    And private context should remain unavailable to public cards, providers, or venture reviewers unless the applicable principal release policy permits disclosure

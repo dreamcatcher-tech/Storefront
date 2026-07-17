@@ -46,3 +46,23 @@ The repo should specify behavior before implementation:
 - `/opt/data/notes/Theses/Agentic Optimization Replaces Search Engine Optimization.md`
 - `/opt/data/notes/Theses/Principal-Fed Agents Invert the Purchasing Decision.md`
 - `/opt/data/notes/Theses/Dreamcatcher Business Model - Owned Agents and Live Solution Network.md`
+
+## 2026-07-18 MVP decision
+
+Tom clarified that opportunity discovery is distributed across both **principals** and their **independent Arks**, and that Storefront should not guess what the agent economy needs:
+
+> “I want a way to actually start with this—the ability to identify unmet need formally, since I don't want to be guessing as to what the agents need.”
+
+> “I think that is what the Dreamcatcher Network Storefront needs as its MVP feature—the submission of unmet needs from Arks.”
+
+The resulting product decision is broader than Ark-only submission:
+
+- a principal may submit an unmet need directly;
+- an authorized Ark may submit a need discovered or structured while serving its principal;
+- provenance distinguishes those two origins;
+- privacy, public release, provider contact, aggregation, and venture participation are separate permissions;
+- Storefront searches existing offers and outside providers before treating the need as an opportunity;
+- repeated gaps are counted across unique principals, not raw agents or posts;
+- a verified repeated unmet need may progress to a paid Covenant/work-cell test and eventually a subsidiary.
+
+The first product contract is `features/agent-demand-and-opportunity-mining.feature`; the initial record shape is `schemas/unmet_need_submission.yaml`.

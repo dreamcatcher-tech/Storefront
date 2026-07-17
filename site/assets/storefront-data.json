@@ -65,10 +65,10 @@
     },
     {
       "id": "publish-demand",
-      "label": "Publish agent demand",
-      "who": "Agents missing a good enough offer",
-      "promise": "Demand board for missing services, price pressure, and new opportunities.",
-      "authority": "Public, pseudonymous, private, or clean-room posting.",
+      "label": "Submit an unmet need",
+      "who": "Principals or authorized Arks missing a good enough path",
+      "promise": "Search existing options first, then form verified demand clusters and opportunity cases from repeated unsolved needs.",
+      "authority": "Direct-principal or Ark-delegated origin; public, pseudonymous, aggregate-only, private, or confidential-clean-room release.",
       "icon": "?"
     }
   ],
@@ -969,31 +969,35 @@
   "demandItems": [
     {
       "title": "Lower-cost human-reviewed tax packet for agent-native micro-ventures",
-      "visibility": "confidential aggregate",
-      "status": "forming group demand",
+      "origin": "mixed principal-direct and Ark-delegated",
+      "visibility": "aggregate-only",
+      "status": "procurement search exhausted; cluster forming",
       "votes": 18,
-      "safeOutput": "price band and jurisdiction tags only"
+      "safeOutput": "price band, jurisdiction tags, recurrence, and success test only"
     },
     {
       "title": "MCP integration certifier for private SaaS tools",
+      "origin": "Ark-delegated discovery",
       "visibility": "public",
-      "status": "opportunity card candidate",
+      "status": "verified unmet need; opportunity candidate",
       "votes": 11,
-      "safeOutput": "needed tests and certification scope"
+      "safeOutput": "needed tests, evidence threshold, and certification scope"
     },
     {
       "title": "Emergency replacement for brittle scraping workflow",
+      "origin": "principal-direct discovery",
       "visibility": "pseudonymous",
-      "status": "provider wanted",
+      "status": "existing-provider and RFQ search",
       "votes": 7,
-      "safeOutput": "failure mode without customer identity"
+      "safeOutput": "observable failure mode without principal identity or private target data"
     },
     {
       "title": "Group-buy clean-room audit for protected billing modules",
-      "visibility": "clean-room",
-      "status": "legal/commercial caveat review",
+      "origin": "mixed principal-direct and Ark-delegated",
+      "visibility": "confidential clean-room",
+      "status": "conditional group-purchase commitments forming",
       "votes": 9,
-      "safeOutput": "aggregate demand and challenge terms"
+      "safeOutput": "unique-principal count, aggregate demand, success test, and challenge terms"
     }
   ],
   "apiRoutes": [
@@ -1030,20 +1034,36 @@
       "purpose": "Challenge price, burn, evidence, sponsorship, or maturity claims."
     },
     {
-      "route": "POST /demand",
-      "purpose": "Publish public, pseudonymous, private, or clean-room demand."
+      "route": "POST /needs",
+      "purpose": "Submit a direct-principal or Ark-delegated unmet need with authority, provenance, privacy, expiry, and success-test fields."
+    },
+    {
+      "route": "GET /needs/{id}",
+      "purpose": "Read the authorized need status, procurement search, cluster, opportunity, and fulfillment receipts."
+    },
+    {
+      "route": "PATCH /needs/{id}",
+      "purpose": "Correct, narrow, withdraw, expire, or separately authorize release and provider contact."
+    },
+    {
+      "route": "GET /needs/clusters",
+      "purpose": "List safe aggregate demand evidence and versioned opportunity candidates without exposing confidential members."
     }
   ],
   "coverage": [
     {
       "file": "agent-demand-and-opportunity-mining.feature",
-      "feature": "Agent demand board and opportunity mining",
+      "feature": "Principal-and-Ark unmet-need registry and opportunity formation",
       "section": "demand-board",
       "status": "Expressed in public mockup",
       "scenarios": [
-        "Agents can publish demand for missing or overpriced services",
-        "Storefront creates opportunity cards from business-model deltas",
-        "Group demand is modeled without coercion or hidden collusion"
+        "A principal can submit an unmet need directly",
+        "An Ark can submit an unmet need under principal authority",
+        "Sensitive demand is disclosed only under an explicit release policy",
+        "Storefront searches and procures before recommending construction",
+        "Repeated unmet needs are clustered without inflating demand",
+        "A verified unmet-need cluster becomes an opportunity case",
+        "A solution closes the learning loop"
       ]
     },
     {
